@@ -1,16 +1,19 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 import 'whatwg-fetch';
 import classnames from 'classnames';
 
 class Newsletter extends PureComponent {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    success: PropTypes.bool.isRequired
+  }
+
   constructor(props) {
     super(props);
 
-    this.state = {
-      email: '',
-      success: false
-    };
+    this.state = { email: '' };
   }
 
   handleSubmit = (event) => {
@@ -21,9 +24,7 @@ class Newsletter extends PureComponent {
     fetch(`https://script.google.com/macros/s/AKfycbyZu3JyC44b6fUd3agpwjUiThBQ4baAyY7q3BYGlUP8mN5u_yZb/exec?email=${email}`, {
       method: 'GET'
     })
-    .then(() => {
-      this.setState({ success: true });
-    })
+    .then(() => { this.props.onSubmit(); })
     .catch(function(error) {
       console.log('request failed', error)
     });
@@ -34,26 +35,28 @@ class Newsletter extends PureComponent {
   }
 
   render() {
+    const { success } = this.props;
 
     const successClasses = classnames({
       'success-message': true,
-      '-visible': this.state.success
+      '-visible': success
     })
 
     return (
       <div className="c-newsletter">
-        <form onSubmit={e => this.handleSubmit(e)}>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            value={this.state.email}
-            placeholder="Your mail here"
-            onChange={e => this.handleInput(e)}
-            required
-          />
-          <button type="submit">Send</button>
-        </form>
+        {!success &&
+          <form onSubmit={e => this.handleSubmit(e)}>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={this.state.email}
+              placeholder="Your mail here"
+              onChange={e => this.handleInput(e)}
+              required
+            />
+        <button type="submit">Send</button>
+          </form>}
         <span className={successClasses}>Thanks for subscribing!</span>
       </div>
     );

@@ -19,15 +19,6 @@
     @media #{$mq-md} {
       padding: 45px 0 70px;
     }
-
-    .credits {
-      margin: 15px 0 0;
-
-      p {
-        font-size: $font-size-small;
-        text-align: right;
-      }
-    }
   }
 
   .newsletter-container {
@@ -121,6 +112,16 @@
             }
           }
         }
+      }
+    }
+
+    .credits {
+      margin: 15px 0 0;
+
+      p {
+        font-size: $font-size-tiny;
+        font-style: italic;
+        text-align: right;
       }
     }
   }

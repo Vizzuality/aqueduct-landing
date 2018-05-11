@@ -2643,11 +2643,6 @@ ul li {
   @media (min-width: 48rem) {
     .homepage .content {
       padding: 45px 0 70px; } }
-  .homepage .content .credits {
-    margin: 15px 0 0; }
-    .homepage .content .credits p {
-      font-size: 14px;
-      text-align: right; }
 
 .homepage .newsletter-container {
   margin: 20px 0 0; }
@@ -2710,6 +2705,12 @@ ul li {
             .homepage footer .members .logo-list img.-world-bank {
               width: 215px;
               max-height: 70px; } }
+  .homepage footer .credits {
+    margin: 15px 0 0; }
+    .homepage footer .credits p {
+      font-size: 11px;
+      font-style: italic;
+      text-align: right; }
 
 .c-box {
   height: 100%;
@@ -2719,6 +2720,9 @@ ul li {
     background: #2e57b8;
     color: #fff; }
   .c-box.-secondary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: #f5f4f0; }
   .c-box .description {
     margin: 20px 0 0; }

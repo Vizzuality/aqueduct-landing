@@ -5,7 +5,17 @@ import Newsletter from './components/newsletter';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { signed: false };
+  }
+
+  onSigned = () => { this.setState({ signed: true })}
+
   render() {
+    const { signed } = this.state;
+
     return (
       <div className="homepage">
         <Icons />
@@ -22,7 +32,10 @@ class App extends Component {
                       <span>Coming soon. Sign up for updates:</span>
                       <div className="row">
                         <div className="col-xs-12 col-md-6">
-                          <Newsletter />
+                          <Newsletter
+                            onSubmit={this.onSigned}
+                            success={signed}
+                          />
                         </div>
                       </div>
                     </div>
@@ -37,8 +50,10 @@ class App extends Component {
             <div className="row equal-height">
               <div className="col-xs-12 col-md-6">
                 <section className="c-box -secondary">
-                  <h2>Cost-benefit analysis</h2>
-                  <div className="description">Benefits calculated based on risk metrics developed using a probabilistic approach.</div>
+                  <div className="title-container">
+                    <h2>Cost-benefit analysis</h2>
+                    <div className="description">Benefits calculated based on risk metrics developed using a probabilistic approach.</div>
+                  </div>
                   <div className="icon-container">
                     <Icon name="money-bag" />
                   </div>
@@ -46,8 +61,10 @@ class App extends Component {
               </div>
               <div className="col-xs-12 col-md-6">
                 <section className="c-box -secondary">
-                  <h2>High spatial resolution</h2>
-                  <div className="description">30 arc-second resolution hazard maps with global coverage.</div>
+                  <div className="title-container">
+                    <h2>High spatial resolution</h2>
+                    <div className="description">30 arc-second resolution hazard maps with global coverage.</div>
+                  </div>
                   <div className="icon-container">
                     <Icon name="space-station" />
                   </div>
@@ -55,8 +72,10 @@ class App extends Component {
               </div>
               <div className="col-xs-12 col-md-6">
                 <section className="c-box -secondary">
-                  <h2>Existing protection standards</h2>
-                  <div className="description">Existing local flood protection standards included.</div>
+                  <div className="title-container">
+                    <h2>Existing protection standards</h2>
+                    <div className="description">Existing local flood protection standards included.</div>
+                  </div>
                   <div className="icon-container">
                     <Icon name="antivirus" />
                   </div>
@@ -64,8 +83,10 @@ class App extends Component {
               </div>
               <div className="col-xs-12 col-md-6">
                 <section className="c-box -secondary">
-                  <h2>Future projections</h2>
-                  <div className="description">Future risks captured taking climate change and socio-economic change into account.</div>
+                  <div className="title-container">
+                    <h2>Future projections</h2>
+                    <div className="description">Future risks captured taking climate change and socio-economic change into account.</div>
+                  </div>
                   <div className="icon-container">
                     <Icon name="analytics" />
                   </div>
@@ -77,7 +98,10 @@ class App extends Component {
                   <div className="row">
                     <div className="col-xs-12 col-md-8">
                       <div className="newsletter-container">
-                        <Newsletter />
+                        <Newsletter
+                          onSubmit={this.onSigned}
+                          success={signed}
+                        />
                       </div>
                     </div>
                   </div>
@@ -90,15 +114,6 @@ class App extends Component {
                     Global Flood Protection Cost-Benefit Analyzer, contact <a href="mailto:tianyi.luo@wri.org">Tianyi Luo.</a>
                   </div>
                 </section>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-xs-12">
-                <div className="credits">
-                  <p>Icons made by mynamepong, Freepik and Smashicons from&nbsp;
-                    <a href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer">www.flaticon.com</a>
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -150,6 +165,15 @@ class App extends Component {
                   </a>
                 </li>
               </ul>
+            </div>
+            <div className="row">
+              <div className="col-xs-12">
+                <div className="credits">
+                  <p>Icons made by mynamepong, Freepik and Smashicons from&nbsp;
+                    <a href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer">www.flaticon.com</a>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </footer>

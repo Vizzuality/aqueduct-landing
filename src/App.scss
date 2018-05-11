@@ -1,0 +1,13 @@
+@import 'styles/reset';
+@import 'styles/settings';
+
+@import 'styles/base';
+@import 'styles/grid';
+
+// page
+@import 'styles/pages/index';
+
+// components
+@import 'styles/components/box';
+@import 'styles/components/icon';
+@import 'styles/components/newsletter';

@@ -1,0 +1,35 @@
+.c-box {
+  height: 100%;
+  padding: 50px;
+  border-radius: 3px;
+
+  &.-primary {
+    background: $color-2;
+    color: $color-4;
+  }
+
+  &.-secondary {
+    background: $color-3;
+  }
+
+  .description {
+    margin: 20px 0 0;
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    margin: 45px 0 0;
+
+    @media #{$mq-lg} {
+      justify-content: flex-end;
+    }
+  }
+
+  .splash-box {
+
+    h2 {
+      margin: 15px 0 0;
+    }
+  }
+}

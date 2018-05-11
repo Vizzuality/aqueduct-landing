@@ -1,0 +1,127 @@
+.homepage {
+
+  .splash {
+    padding: 35px 0;
+
+    @media #{$mq-md} {
+      padding: 105px 0;
+    }
+
+    background-image: url('/static/images/splash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .content {
+    padding: 25px 0 45px;
+
+    @media #{$mq-md} {
+      padding: 45px 0 70px;
+    }
+
+    .credits {
+      margin: 15px 0 0;
+
+      p {
+        font-size: $font-size-small;
+        text-align: right;
+      }
+    }
+  }
+
+  .newsletter-container {
+    margin: 20px 0 0;
+
+    > span {
+      display: inline-block;
+      margin: 0 0 10px;
+    }
+  }
+
+  footer {
+    padding: 60px 0;
+    background: $color-3;
+
+    .members {
+      margin: 20px 0 0;
+
+      .logo-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        @media #{$mq-md} {
+          margin: 35px 0 0;
+          justify-content: flex-start;
+        }
+
+        > li {
+          margin: 15px 35px 0 0;
+          &:last-child {
+            margin: 15px 0 0 0;
+          }
+
+          > a {
+            display: block;
+          }
+        }
+
+        img {
+          mix-blend-mode: darken;
+
+          &.-deltares {
+            width: 124px;
+            max-height: 65px;
+          }
+
+          &.-pbl {
+            width: 100px;
+            max-height: 56px;
+
+            @media #{$mq-md} {
+              width: 100px;
+              max-height: 56px;
+            }
+          }
+
+          &.-ivm-vu {
+            width: 120px;
+            max-height: 35px;
+          }
+
+          &.-government-netherlands {
+            width: 130px;
+            max-height: 74px;
+
+            @media #{$mq-md} {
+              width: 130px;
+              max-height: 74px;
+            }
+          }
+
+          &.-utrecht-university {
+            width: 125px;
+            max-height: 35px;
+          }
+
+          &.-wri {
+            width: 130px;
+            max-height: 45px;
+          }
+
+          &.-world-bank {
+            width: 175px;
+            max-height: 35px;
+
+            @media #{$mq-md} {
+              width: 215px;
+              max-height: 70px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

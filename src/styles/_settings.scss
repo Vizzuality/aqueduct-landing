@@ -1,0 +1,37 @@
+// colours
+$color-1: #4a4a4a;
+$color-2: #2e57b8;
+$color-3: #f5f4f0;
+$color-4: #fff;
+
+// typography - family
+$font-family: 'Roboto', sans-serif;
+
+// typography – size
+$font-size-small: 14px;
+$font-size-regular: 15px;
+$font-size-big: 32px;
+$font-size-huge: 48px;
+
+// typography – weight
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+
+// flexbox grid
+$flexboxgrid-max-width: 1200px;
+$flexboxgrid-grid-columns: 12;
+$flexboxgrid-gutter-width: 20px;
+$flexboxgrid-outer-margin: 20px;
+$flexboxgrid-breakpoints: (
+  sm: 24rem,
+  md: 48rem,
+  lg: 62rem,
+  xlg: 80rem
+);
+
+// responsive – media queries
+$mq-sm: screen and (min-width: 24rem);
+$mq-md: screen and (min-width: 48rem);
+$mq-lg: screen and (min-width: 80rem);

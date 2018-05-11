@@ -1,0 +1,37 @@
+
+.c-newsletter {
+  form {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 3px;
+    background: $color-4;
+
+    input[type="email"] {
+      width: 75%;
+      color: $color-1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    button[type="submit"] {
+      padding: 5px 10px;
+      border-radius: 3px;
+      background: $color-2;
+      color: $color-4;
+    }
+  }
+
+  .success-message {
+    display: inline-block;
+    margin: 5px 0 0;
+    visibility: hidden;
+
+    &.-visible {
+      visibility: visible;
+    }
+
+
+  }
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Icons from './components/icons';
 import Icon from './components/icon';
 import Newsletter from './components/newsletter';
 import './App.css';
@@ -7,6 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="homepage">
+        <Icons />
         <div className="splash">
           <div className="wrapper">
             <div className="row">
